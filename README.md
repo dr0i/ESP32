@@ -64,7 +64,9 @@ Read the MH-Z14A CO2-Sensor. That was hard - I got some plausible,
 but very round measure (either 410 ppm or 430 ppm) around 12 times, after which I got
 permanently 5000 ppm and sometimes -1 . 5000 ppm happens to be the  maximum of the sensors
 measuring capacity. That's also the value written to output after the sensor is
-booted. So ... problem was that I connected
+booted. 
+
+So ... problem was that I connected
 the ESP32 eve 3.3V connector to power the MH-Z14A like proposed in "DHT22" (where
 this was sufficient to use the DHT22) via the breadboard as shown in the link
 above. After reading
@@ -72,3 +74,9 @@ https://www.letscontrolit.com/forum/viewtopic.php?f=2&t=1785 I understood
 that the problem was too low voltage. Here 
 https://www.esp32.com/viewtopic.php?t=11904 is shown how to get the 5V (it's
 the red VIN connector). Now the sensor measures nice, unround values :)
+
+I did my best to simplify the program (it consist of one file and doesn't need
+any library besides the standard Arduino) and wrote all kinds of notes and
+sources of problems into it: 
+
+https://github.com/dr0i/ESP32/ESP32-MH-Z14A/co2FromSerial.cpp
