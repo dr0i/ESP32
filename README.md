@@ -75,7 +75,7 @@ that the problem was too low voltage. Here
 https://www.esp32.com/viewtopic.php?t=11904 is shown how to get the 5V (it's
 the red VIN connector). Now the sensor measures nice, unround values :)
 
-I did my best to simplify the program (it consist of one file and doesn't need
+I did my best to simplify the program (it consists of one file and doesn't need
 any library besides the standard Arduino) and wrote all kinds of notes and
 sources of problems into it: 
 

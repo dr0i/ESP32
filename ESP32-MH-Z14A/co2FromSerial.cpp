@@ -28,7 +28,7 @@
  * Thanks to https://www.letscontrolit.com/forum/viewtopic.php?t=1785 I got the
  * problems solved.
  * 
- * If you use arduino ide make sure to the the "Serial Monitor" to 9600 baud to
+ * If you use arduino ide make sure to set the "Serial Monitor" to 9600 baud to
  * view the output.
  * 
  * If you uncomment "calibrate the sensor" the sensor will be calibrated every time
