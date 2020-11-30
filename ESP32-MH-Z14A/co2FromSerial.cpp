@@ -10,15 +10,15 @@
  *  Look at http://www.winsen-sensor.com/d/files/infrared-gas-sensor/mh-z14a_co2-manual-v1_01.pdf
  *  and connect your ESP32 with the MH-Z14A (Pad n):
  *  
- *   5v DC -------> Pad 17
  *   Ground ------> Pad 16
+ *   5v DC -------> Pad 17
  *   TX ----------> Pad 18
  *   RX ----------> Pad 19
  *  
  *  (See also https://www.hackster.io/kritch83/getting-started-with-the-mh-z14a-co2-detector-e96234#team)
  *  
  *  Keep in mind to power the MH-Z14A with 5V, not with the 3.3V, or you get
- *  either 410 or 430 ppm or, with the sensor rebooting, 5000 ppm (and error -1).
+ *  either 410 or 430 ppm and, with the sensor rebooting, 5000 ppm (and error -1).
  *  The ESP32 provides both, 3.3V and 5V output. The latter is named "VIN" on the
  *  board. See https://www.esp32.com/viewtopic.php?t=11904.
  *  
