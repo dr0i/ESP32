@@ -61,7 +61,8 @@ Read the DHT22 humidity and temperature sensor following. Worked instantly :)
 See https://github.com/rafalmag/ESP32-MH-Z14A
 
 Read the MH-Z14A CO2-Sensor. That was hard - I got some plausible,
-but very round measure (either 410 ppm or 430 ppm) around 12 times, after which I got
+but very round measure (either 410 ppm or 430 ppm) around 12 times (~1 minute)
+(this is normal, so wait a bit till the sensor sends correct data) after which I got
 permanently 5000 ppm and sometimes -1 . 5000 ppm happens to be the  maximum of the sensors
 measuring capacity. That's also the value written to output after the sensor is
 booted. 
