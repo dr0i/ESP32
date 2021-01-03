@@ -14,10 +14,10 @@ Find the proper cable (on \*nix ):
 
 ```bash
 $ ls /dev/tty* > unconnected.log; 
-// connect with a new cable
+# connect with a new cable
 $ ls /dev/tty* > connected.log ; 
 $ diff unconnected.log connected.log
-// if no tty shows up in the diff, try another cable or usb port and restart procedure 
+# if no tty shows up in the diff, try another cable or usb port and restart procedure 
 ```
 
 I had to try *6* cables before '/dev/ttyUSB' did show up - what a relieve, ESP32
@@ -109,6 +109,6 @@ ide may loose the /dev/ttyUSB0 device. To power off the too many LEDs one can
 disconnect the USB or the 5V power cable from the ESP. Then load the program
 (the device will be found now!) and reconnect the power cable.
 
-This is the prototype with ~20 cm in diameter using 20 LEDs running https://github.com/dr0i/ESP32/ESP32-neopixel_led_stripe/sketch_esp32_led_stripes_3.1.cpp :
+This is the prototype with ~20 cm in diameter using 20 LEDs running https://github.com/dr0i/ESP32/blob/master/ESP32-neopixel_led_stripe/sketch_esp32_led_stripes_3.1.cpp :
 
 ![smileys: happy, neutral, sad](https://github.com/dr0i/ESP32/blob/master/co2Smiley.gif)
