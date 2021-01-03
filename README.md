@@ -12,12 +12,12 @@ So here is some of the wrongs I stumbled into:
 ## Connect ESP32 with cable to PC
 Find the proper cable (on \*nix ):
 
-```basic
-10 $ ls /dev/tty* > unconnected.log; 
-20 connect with a new cable
-30 $ ls /dev/tty* > connected.log ; 
-40 $ diff unconnected.log connected.log
-50 if no tty shows up in the diff, goto 20
+```bash
+$ ls /dev/tty* > unconnected.log; 
+// connect with a new cable
+$ ls /dev/tty* > connected.log ; 
+$ diff unconnected.log connected.log
+// if no tty shows up in the diff, try another cable or usb port and restart procedure 
 ```
 
 I had to try *6* cables before '/dev/ttyUSB' did show up - what a relieve, ESP32
@@ -84,3 +84,28 @@ any library besides the standard Arduino) and wrote all kinds of notes and
 sources of problems into it: 
 
 https://github.com/dr0i/ESP32/ESP32-MH-Z14A/co2FromSerial.cpp
+
+### LED stripe
+
+`flash read err, 1000` resulting in reboots, is caused by a power issuse, see:
+https://github.com/espressif/esp-idf/issues/113
+
+I managed to use 23 LEDs of the stripe, which has 50 overall.
+
+"If you are using a 3-wire led chipset, (aka Neopixels, WS2812, TM1809), you
+may have run into some problems when trying to pair it with reading serial
+data ..."
+https://github.com/FastLED/FastLED/wiki/Interrupt-problems
+It's about interrupts. Even with set to 240 Mhz I experienced problems.
+Should have bought a 4-wire led chipset!
+Interestingly, just opening "Tools->Serial Monitor" may cause unpredictable
+sideeffects because of these interrupts. Most important is the number of used
+LEDs: I had no problems to use 23 LEDs but discovered some strange effects
+when using all 50 LEDs. Also, when using too much LEDs, it seems that arduino
+ide may loose the /dev/ttyUSB0 device. To power off the too many LEDs one can
+disconnect the USB or the 5V power cable from the ESP. Then load the program
+(the device will be found now!) and reconnect the power cable.
+
+This is the prototype with ~20 cm in diameter using 20 LEDs running https://github.com/dr0i/ESP32/ESP32-neopixel_led_stripe/sketch_esp32_led_stripes_3.1.cpp :
+
+![smileys: happy, neutral, sad](https://github.com/dr0i/ESP32/blob/master/co2Smiley.gif)
