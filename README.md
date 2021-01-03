@@ -89,6 +89,11 @@ https://github.com/dr0i/ESP32/ESP32-MH-Z14A/co2FromSerial.cpp
 ![alt Picture of ESP32 connected with MH-Z14A and with DHT22 on a breadboard](https://github.com/dr0i/ESP32/blob/master/ESP32_MH-Z14A_DHT22_breadboard.jpg?raw=true)
 
 ### LED stripe
+Bought "DC5V 5M WS2812 5050 SMD RGB 3 Pins LED Module Strip Light with Female
+Male Connector" , i.e. 50 really bright LEDs for just 11 Euro at banggood .
+One can simply cut the cable to use the amount of LEDs one wish.
+Using `FastLED.h` I got it to work. It's easy to use it, but I experienced some
+difficulties, though:
 
 `flash read err, 1000` resulting in reboots, is caused by a power issuse, see:
 https://github.com/espressif/esp-idf/issues/113
@@ -99,8 +104,10 @@ I managed to use 23 LEDs of the stripe, which has 50 overall.
 may have run into some problems when trying to pair it with reading serial
 data ..."
 https://github.com/FastLED/FastLED/wiki/Interrupt-problems
+
 It's about interrupts. Even with set to 240 Mhz I experienced problems.
-Should have bought a 4-wire led chipset!
+!Should have bought a 4-wire led chipset!
+
 Interestingly, just opening "Tools->Serial Monitor" may cause unpredictable
 sideeffects because of these interrupts. Most important is the number of used
 LEDs: I had no problems to use 23 LEDs but discovered some strange effects
@@ -112,3 +119,5 @@ disconnect the USB or the 5V power cable from the ESP. Then load the program
 This is the prototype with ~20 cm in diameter using 20 LEDs running https://github.com/dr0i/ESP32/blob/master/ESP32-neopixel_led_stripe/sketch_esp32_led_stripes_3.1.cpp :
 
 ![smileys: happy, neutral, sad](https://github.com/dr0i/ESP32/blob/master/co2Smiley.gif)
+It's really bright and great and should have a good visibility even in bright
+daylight!
