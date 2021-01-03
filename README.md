@@ -85,6 +85,9 @@ sources of problems into it:
 
 https://github.com/dr0i/ESP32/ESP32-MH-Z14A/co2FromSerial.cpp
 
+#### Picture of ESP32 connected with MH-Z14A and with DHT22 on a breadboard
+![alt Picture of ESP32 connected with MH-Z14A and with DHT22 on a breadboard](https://github.com/dr0i/ESP32/blob/master/ESP32_MH-Z14A_DHT22_breadboard.jpg?raw=true)
+
 ### LED stripe
 
 `flash read err, 1000` resulting in reboots, is caused by a power issuse, see:
